@@ -4,6 +4,9 @@ import { createAuthUserWithEmailAndPassword, createDocFromAuth } from "../../uti
 
 import FormInput from "../form-input/form-input.component";
 
+import Button from "../button/button.component";
+
+import './sign-up-form.styles.scss';
 
 const defaultFormFields = {
     displayName: '',
@@ -54,8 +57,9 @@ const SignUpForm = () => {
     }
     
     return(
-        <div>
-        <h1>Sign up with your email and password</h1>
+        <div className="sign-up-container">
+        <h2>Don't have an account?</h2>
+        <span>Sign up with your email and password</span>
         <form onSubmit={onSubmitHandler}>
         <FormInput label="Display Name" type="text" name="displayName" value={displayName} onChange={onChangeHandler} required/>
 
@@ -65,7 +69,7 @@ const SignUpForm = () => {
 
         <FormInput label="Confirm Password" type="password" name="confirmPassword" value={confirmPassword} onChange={onChangeHandler} required/>
 
-        <button type="submit">Sign Up</button>
+        <Button type="submit">Sign Up</Button>
         </form>
         </div>
     )
